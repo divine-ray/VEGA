@@ -4,7 +4,7 @@
 module.exports = {
     name: 'downloads',
     cooldown: 5,
-    description: 'Prints all available Files.',
+    description: 'Prints all available Files.'
 
     execute(message) {
         const http = require("http");
