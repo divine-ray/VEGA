@@ -27,7 +27,7 @@ module.exports = {
                     }
                     .setTimestamp()
                     .setFooter('Die Verfügbarkeit der Website wird nicht gewährleistet.');
-                channel.send(downloadEmbed);
+                message.channel.send(downloadEmbed);
             }
         });
     }
