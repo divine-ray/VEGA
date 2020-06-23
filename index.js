@@ -41,12 +41,13 @@ client.on('message', message => {
     const command = client.commands.get(commandName)
         || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
-    if (!command)
+    if (!command) {
         console.log('AN unknown command has been issued')
-    return;
+        return;
+    }
 
 
-    const command = client.commands.get(commandName);
+    //const command = client.commands.get(commandName);
 
     if (command.guildOnly && message.channel.type !== 'text') {
         console.log('Failed to execute Guild command in DMs')
@@ -78,14 +79,15 @@ client.on('message', message => {
 
             if (now < expirationTime) {
                 const timeLeft = (expirationTime - now) / 1000;
-                console.log('remnded user in regards to slowmode')
+                console.log('reminded user in regards to slowmode')
                 return message.reply(`please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`);
             }
         }
 
-        timestamps.set(message.author.id, now);
-        setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
+
     }
+    timestamps.set(message.author.id, now);
+    setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
     try {
         command.execute(message, args);
