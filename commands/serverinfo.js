@@ -1,5 +1,7 @@
 module.exports = {
     name: 'serverinfo',
+    guildOnly: true,
+    cooldown: 5,
     description: 'Tells Guild Name and member Count',
     execute(message, args) {
         message.channel.send(`This server's name is: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);

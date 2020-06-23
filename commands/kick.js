@@ -2,7 +2,7 @@ module.exports = {
     name: 'kick',
     description: 'Removes a Mentioned User from the guild',
     guildOnly: true,
-
+    cooldown: 5,
 
 
     execute(message, args) {

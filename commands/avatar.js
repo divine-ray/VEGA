@@ -1,5 +1,7 @@
 module.exports = {
     name: 'avatar',
+    cooldown: 5,
+    aliases: ['icon', 'pfp', 'pp'],
     description: 'Prints a link to the Profile Picture of the mentioned User(s)',
     execute(message) {
         if (!message.mentions.users.size) {
@@ -10,4 +12,5 @@ module.exports = {
 
         }); message.channel.send(avatarList);
     }
+
 }

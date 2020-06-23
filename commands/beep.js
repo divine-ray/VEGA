@@ -1,4 +1,5 @@
 module.exports = {
+    cooldown: 5,
     name: 'beep',
     description: 'Boop!',
     execute(message, args) {

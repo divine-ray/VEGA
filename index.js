@@ -38,11 +38,12 @@ client.on('message', message => {
 
     //console.log('hasCommand?', (client.commands.has(commandName)))
 
-    if (!client.commands.has(commandName)) {
-        message.reply('That command wasnt found!')
-        console.log('An unknown Command was issued')
-        return;
-    }
+    const command = client.commands.get(commandName)
+        || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+
+    if (!command)
+        console.log('AN unknown command has been issued')
+    return;
 
 
     const command = client.commands.get(commandName);
@@ -82,6 +83,8 @@ client.on('message', message => {
             }
         }
 
+        timestamps.set(message.author.id, now);
+        setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
     }
 
     try {

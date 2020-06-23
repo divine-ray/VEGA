@@ -1,5 +1,6 @@
 module.exports = {
     name: 'clearmsgs',
+    cooldown: 5,
     description: 'Deletes a defined Count of Messages',
     execute(message, args) {
         const amount = parseInt(args[0]) + 1;
