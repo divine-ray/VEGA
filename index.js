@@ -42,7 +42,7 @@ client.on('message', message => {
         || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
     if (!command) {
-        console.log('AN unknown command has been issued')
+        console.log('An unknown command has been issued')
         return;
     }
 
