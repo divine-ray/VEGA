@@ -1,12 +1,12 @@
 //add lüdde integation
 // :)
-
+/*
 module.exports = {
     name: 'avatar',
     cooldown: 5,
     aliases: ['icon', 'pfp', 'pp'],
     description: 'Prints a link to the Profile Picture of the mentioned User(s)',
-    
+
     execute(message) {
         const http = require("http");
 
@@ -33,3 +33,4 @@ module.exports = {
         });
     }
 }
+*/
