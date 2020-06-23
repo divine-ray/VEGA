@@ -1,7 +1,7 @@
-module.export = {
+module.exports = {
     name: 'userinfo',
     description: 'Tells Username and ID',
-    execute(mesage, args) {
+    execute(message, args) {
         message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
         console.log('Issued Userinfo Command')
     }

@@ -1,12 +1,12 @@
-module.export = {
+module.exports = {
     name: 'serverinfo',
     description: 'Tells Guild Name and member Count',
-    execute(mesage,args) {
+    execute(message, args) {
         message.channel.send(`This server's name is: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
         console.log('Issued Server_Info Command')
-            if (message.guild.name === 'Höllenschlund') {
+        if (message.guild.name === 'Höllenschlund') {
             message.channel.send('Die Hölle!')
-            console.log('Issued ServerInfo Command') 
+            console.log('Issued ServerInfo Command')
         }
     }
 }
