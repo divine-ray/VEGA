@@ -1,6 +1,6 @@
 //add lüdde integation
 // :)
-
+/*
 module.exports = {
     name: 'downloads',
     cooldown: 5,
@@ -32,4 +32,4 @@ module.exports = {
         });
     }
 }
-
+*/
