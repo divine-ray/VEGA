@@ -5,6 +5,7 @@ const Discord = require("Discord.js");
 module.exports = {
     name: 'downloads',
     cooldown: 5,
+    aliases: ['dl', 'download'],
     description: 'Prints all available Files.',
 
     execute(message) {
@@ -24,14 +25,13 @@ module.exports = {
                 downloadEmbed.setTitle("Downloadpage");
                 downloadEmbed.setURL("http://xj4kuswsas2jjggi.myfritz.net:8080/download/");
                 downloadEmbed.setDescription("Eine Liste aller dämonischen Dateien.");
-                
+
                 /*for (let i = 0; i < data.length-1; i++) {
                     downloadEmbed.addField("Benutzer: ", data[i]["name"]);
                     for (let j = 0; j < data[i]["files"].length-1; j++) {
                         downloadEmbed.addField(" "+data[i]["files"][j]["file"]+": ", data[i]["files"][j]["url"]);
                     }
                 }*/
-                
 
                 downloadEmbed.setTimestamp();
                 downloadEmbed.setFooter("Die Erreichbarkeit der Website wird nicht gewährleistet.");
