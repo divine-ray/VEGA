@@ -1,5 +1,7 @@
 //add lüdde integation
 // :)
+const Discord = require("Discord.js");
+
 module.exports = {
     name: 'downloads',
     cooldown: 5,
