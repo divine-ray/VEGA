@@ -6,7 +6,7 @@ module.exports = {
     name: 'downloads',
     aliases: ['dl', 'download'],
     cooldown: 5,
-    description: 'Prints all available Files.',
+    description: 'Prints all available Files from our download site.',
 
     execute(message) {
         const http = require("http");
@@ -24,7 +24,7 @@ module.exports = {
                 downloadEmbed.setColor("#6e3684");
                 downloadEmbed.setTitle("Downloadpage");
                 downloadEmbed.setURL("http://xj4kuswsas2jjggi.myfritz.net:8080/download/");
-                downloadEmbed.setDescription("Eine Liste aller dämonischen Dateien.");
+                downloadEmbed.setDescription("Eine Liste aller Dateien.");
 
 
 
