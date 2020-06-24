@@ -1,4 +1,4 @@
-module.exports = {
+/*module.exports = {
     name: 'general-assembly',
     cooldown: 5,
     aliases: ['ga', 'vollversammlung', 'vs'],
@@ -7,4 +7,4 @@ module.exports = {
 
 
 
-}
+}*/
