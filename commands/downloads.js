@@ -1,8 +1,6 @@
 //add lüdde integation
 // :)
 
-const Discord = require('discord.js');
-
 module.exports = {
     name: 'downloads',
     cooldown: 5,
@@ -34,5 +32,6 @@ module.exports = {
                 message.channel.send(downloadEmbed);
             });
         }
-}
+
+    }
 }
