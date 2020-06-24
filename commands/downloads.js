@@ -28,12 +28,10 @@ module.exports = {
                     .setColor('#0099ff')
                     .setTitle('Momentan verfügbare Dateien:')
                     .setURL('http://xj4kuswsas2jjggi.myfritz.net:8080/download/')
-                    .addField(list_2
+                    .addField(list_2);
                 
               
                 message.channel.send(downloadEmbed);
-            })
-        })
+        });
     }
-
 }
