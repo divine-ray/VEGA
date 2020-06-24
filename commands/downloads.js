@@ -34,6 +34,7 @@ module.exports = {
                     }
                 }*/
 
+
                 downloadEmbed.setTimestamp();
                 downloadEmbed.setFooter("Die Erreichbarkeit der Website wird nicht gewährleistet.");
 
