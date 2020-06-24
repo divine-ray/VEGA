@@ -23,7 +23,7 @@ module.exports = {
                     values += { value: data.split(";")[i] };
                 }
 
-                const downloadEmbed = Discord.MessageEmbed();
+                const downloadEmbed = new Discord.MessageEmbed();
                 downloadEmbed.setColor("#6e3684");
                 downloadEmbed.setTitle("Downloadpage");
                 downloadEmbed.setURL("http://xj4kuswsas2jjggi.myfritz.net:8080/download/");
