@@ -1,6 +1,5 @@
 //add lüdde integation
 // :)
-
 module.exports = {
     name: 'downloads',
     cooldown: 5,
@@ -17,8 +16,25 @@ module.exports = {
             });
 
             res.on('end', () => {
+                var values = [];
+                for (let i = 0; i < data.split(";") - 2; i++) {
+                    values += { value: data.split(";")[i] };
+                }
+
+                const downloadEmbed = Discord.MessageEmbed();
+                downloadEmbed.setColor("#6e3684");
+                downloadEmbed.setTitle("Downloadpage");
+                downloadEmbed.setURL("http://xj4kuswsas2jjggi.myfritz.net:8080/download/");
+                downloadEmbed.setDescription("Eine Liste aller dämonischen Dateien.");
+
+
+
+                downloadEmbed.setTimestamp();
+                downloadEmbed.setFooter("Die Erreichbarkeit der Website wird nicht gewährleistet.");
+
                 message.channel.send(data);
             });
+
         });
     }
 }
