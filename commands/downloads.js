@@ -18,10 +18,6 @@ module.exports = {
             });
 
             res.on('end', () => {
-                var values = [];
-                for (let i = 0; i < data.split(";") - 2; i++) {
-                    values += { value: data.split(";")[i] };
-                }
 
                 const downloadEmbed = new Discord.MessageEmbed();
                 downloadEmbed.setColor("#6e3684");
@@ -34,7 +30,7 @@ module.exports = {
                 downloadEmbed.setTimestamp();
                 downloadEmbed.setFooter("Die Erreichbarkeit der Website wird nicht gewährleistet.");
 
-                message.channel.send(downloadEmbed);
+                message.channel.send(data);
             });
 
         });
