@@ -25,7 +25,7 @@ module.exports = {
                     .setTitle('Momentan verfügbare Dateien:')
                     .setURL('http://xj4kuswsas2jjggi.myfritz.net:8080/download/')
                 for (let step = 0; step < list.length - 1; step++) {
-                    addField(list[step])
+                    .addField(list[step])
                 }
                 setTimestamp()
                     .setFooter('Die Verfügbarkeit der Website wird nicht gewährleistet.');
