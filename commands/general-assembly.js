@@ -3,4 +3,8 @@ module.exports = {
     cooldown: 5,
     aliases: ['ga', 'vollversammlung', 'vs'],
     description: 'Forces everyone into a voice channel.',
-    execute(message) {
+    execute(message)
+
+
+
+}
