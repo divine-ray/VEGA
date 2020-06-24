@@ -4,7 +4,7 @@
 module.exports = {
     name: 'downloads',
     cooldown: 5,
-    description: 'Prints all available Files.',
+    description: 'Prints all available Files.'
 
     execute(message) {
         const http = require("http");
@@ -27,7 +27,7 @@ module.exports = {
                     }
                     .setTimestamp()
                     .setFooter('Die Verfügbarkeit der Website wird nicht gewährleistet.');
-                channel.send(downloadEmbed);
+                message.channel.send(downloadEmbed);
             }
         });
     }
