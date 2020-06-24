@@ -10,7 +10,9 @@ module.exports = {
             || message.client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
         if (!command) {
+            console.log('tried to reload a unknown command')
             return message.channel.send(`There is no command with name or alias \`${commandName}\`, ${message.author}!`);
+
         }
 
         delete require.cache[require.resolve(`./${command.name}.js`)];
@@ -19,8 +21,10 @@ module.exports = {
             const newCommand = require(`./${command.name}.js`);
             message.client.commands.set(newCommand.name, newCommand);
             message.channel.send(`Command \`${command.name}\` was reloaded!`);
+            console.log('A command has been reloaded')
         } catch (error) {
             console.log(error);
+
             message.channel.send(`There was an error while reloading a command \`${command.name}\`:\n\`${error.message}\``);
         }
     },
