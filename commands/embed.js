@@ -7,7 +7,7 @@ module.exports = {
     aliases: ['embed'],
     description: '...!',
     execute(message, args) {
-        message.channel.send('Beep');
+
         console.log('Issued BeepBoop Command')
         const exampleEmbed = new Discord.MessageEmbed()
             .setColor('#0099ff')
@@ -32,4 +32,4 @@ module.exports = {
     }
 
 
-}// inside a command, event listener, etc.
+}
