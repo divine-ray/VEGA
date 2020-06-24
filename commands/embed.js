@@ -8,13 +8,14 @@ module.exports = {
     description: '...!',
     execute(message, args) {
 
-        console.log('Issued BeepBoop Command')
+        console.log('Issued Embed Command')
         const exampleEmbed = new Discord.MessageEmbed()
             .setColor('#0099ff')
-            .setTitle('Some title')
-            .setURL('https://discord.js.org/')
-            .setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
-            .setDescription('Some description here')
+            .setTitle('Download List')
+            .setURL('http://xj4kuswsas2jjggi.myfritz.net:8080/downloadtext')
+            .setAuthor('Ludima',// 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org'//
+            )
+            .setDescription('All available Files of our downloads server')
             .setThumbnail('https://i.imgur.com/wSTFkRM.png')
             .addFields(
                 { name: 'Regular field title', value: 'Some value here' },
@@ -27,7 +28,7 @@ module.exports = {
             .setTimestamp()
             .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
 
-        channel.send(exampleEmbed);
+        message.reply(exampleEmbed);
 
     }
 
