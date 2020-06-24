@@ -24,7 +24,8 @@ module.exports = {
                 .catch(error => {
                     console.error(`Could not send help DM to ${message.author.tag}.\n`, error);
                     message.reply('it seems like I can\'t DM you!');
-                    console.log('Couldnt deliver the help-message')
+                    console.log('Couldnt deliver the help message into DMs')
+
                 });
         }
 
@@ -41,7 +42,7 @@ module.exports = {
         if (command.description) data.push(`**Description:** ${command.description}`);
         if (command.usage) data.push(`**Usage:** ${prefix}${command.name} ${command.usage}`);
 
-        data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
+        data.push(`**Cooldown:** ${command.cooldown || 5} second(s)`);
 
         message.channel.send(data, { split: true });
     }
