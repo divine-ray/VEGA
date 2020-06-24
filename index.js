@@ -28,15 +28,15 @@ client.once('ready', () => {
 client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-    const args = message.content.slice(prefix.length).split(' +');
+    const args = message.content.slice(prefix.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
 
 
 
-    //console.log('commandName', commandName)
+    console.log('commandName', commandName)
 
 
-    //console.log('hasCommand?', (client.commands.has(commandName)))
+    console.log('hasCommand?', (client.commands.has(commandName)))
 
     const command = client.commands.get(commandName)
         || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
