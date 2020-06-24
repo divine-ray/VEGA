@@ -1,6 +1,8 @@
 //add lüdde integation
 // :)
 
+const Discord = require('discord.js');
+
 module.exports = {
     name: 'downloads',
     cooldown: 5,
@@ -16,7 +18,7 @@ module.exports = {
                 data += chunk;
             });
 
-            resp.on('end', () => {
+            res.on('end', () => {
                 var list = data.split(";");
                 const downloadEmbed = new Discord.MessageEmbed()
                     .setColor('#0099ff')
