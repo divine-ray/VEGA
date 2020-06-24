@@ -4,6 +4,7 @@ const Discord = require("Discord.js");
 
 module.exports = {
     name: 'downloads',
+    aliases: ['dl', 'download'],
     cooldown: 5,
     description: 'Prints all available Files.',
 
