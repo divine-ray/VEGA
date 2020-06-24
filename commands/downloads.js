@@ -67,7 +67,7 @@ module.exports = {
                 for (let i = 0; i < data.length-1; i++) {
                     downloadEmbed.addField("Benutzer: ", data[i]["name"]);
                     for (let j = 0; j < data[i]["files"].length-1; j++) {
-                        downloadEmbed.addField(" "+data[i]["files"][j]["file"]+": ", data[i]["files"][j]["url"])
+                        downloadEmbed.addField(" "+data[i]["files"][j]["file"]+": ", data[i]["files"][j]["url"]);
                     }
                 }
                 
