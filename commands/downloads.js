@@ -21,7 +21,7 @@ module.exports = {
             res.on('end', () => {
                 var list = data.split(";");
                 var list_2 = [];
-                for (let i = 0; i < list.length-1; i++) {
+                for (let i = 0; i < list.length - 1; i++) {
                     list_2 += { value: list[i] }
                 }
                 const downloadEmbed = new Discord.MessageEmbed()
@@ -29,9 +29,10 @@ module.exports = {
                     .setTitle('Momentan verfügbare Dateien:')
                     .setURL('http://xj4kuswsas2jjggi.myfritz.net:8080/download/')
                     .addFields(list_2);
-                
-              
+
+
                 message.channel.send(downloadEmbed);
-        });
-    }
+            });
+        }
+}
 }
