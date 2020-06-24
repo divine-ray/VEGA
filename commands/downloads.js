@@ -18,8 +18,9 @@ module.exports = {
                 string += chunk;
             });
 
-            res.on('end', () => {               
+            res.on('end', () => {
                 var data = JSON.parse(string);
+
                 const downloadEmbed = new Discord.MessageEmbed();
                 downloadEmbed.setColor("#6e3684");
                 downloadEmbed.setTitle("Downloadpage");
@@ -36,7 +37,9 @@ module.exports = {
                 downloadEmbed.setTimestamp();
                 downloadEmbed.setFooter("Die Erreichbarkeit der Website wird nicht gewährleistet.");
 
-                message.channel.send(data);
+                // console.log(data[0].name);
+
+                message.channel.send(JSON.stringify(data, null, 2));
             });
 
         });
