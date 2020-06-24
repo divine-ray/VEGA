@@ -11,13 +11,14 @@ module.exports = {
         const http = require("http");
 
         http.get('http://xj4kuswsas2jjggi.myfritz.net:8080/downloadtext', (res) => {
-            let data = '';
+            let string = '';
 
             res.on('data', (chunk) => {
-                data += chunk;
+                string += chunk;
             });
 
-            res.on('end', () => {                
+            res.on('end', () => {               
+                var data = JSON.parse(string);
                 const downloadEmbed = new Discord.MessageEmbed();
                 downloadEmbed.setColor("#6e3684");
                 downloadEmbed.setTitle("Downloadpage");
