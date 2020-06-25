@@ -14,6 +14,7 @@ module.exports = {
         console.log('calling http');
 
 
+
         const res = await new Promise(resolve => http.get('http://xj4kuswsas2jjggi.myfritz.net:8080/downloadtext', resolve));
 
         console.log('has response', res !== undefined);
@@ -32,6 +33,7 @@ module.exports = {
 
                 console.log('has data %j', data);
 
+
                 const downloadEmbed = new Discord.MessageEmbed();
                 downloadEmbed.setColor("#6e3684");
                 downloadEmbed.setTitle("Downloadpage");
@@ -44,15 +46,24 @@ module.exports = {
               
                     downloadEmbed.addField("Benutzer: ", data[i]["name"]);
                     for (let j = 0; j < data[i]["files"].length; j++) {
+
                         downloadEmbed.addField(" " + data[i]["files"][j]["file"] + ": ", data[i]["files"][j]["url"]);
                     }
                 }
-
-
-
-
+              
                 downloadEmbed.setTimestamp();
                 downloadEmbed.setFooter("Die Erreichbarkeit der Website wird nicht gewährleistet.");
+
+
+                console.log(downloadEmbed);
+
+                //message.channel.send(JSON.stringify(data, null, 2));
+                //message.channel.send(downloadEmbed.toJSON(); || 'none');
+        
+
+
+
+
 
 
                 console.log(downloadEmbed);
@@ -60,6 +71,7 @@ module.exports = {
 
                 //message.channel.send(JSON.stringify(data, null, 2));
                 resolve(downloadEmbed);
+
 
             });
         })
