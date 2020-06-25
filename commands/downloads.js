@@ -39,7 +39,9 @@ module.exports = {
                 downloadEmbed.setDescription("Eine Liste aller dämonischen Dateien.");
 
 
+
                 for (let i = 0; i < data.length; i++) {
+              
                     downloadEmbed.addField("Benutzer: ", data[i]["name"]);
                     for (let j = 0; j < data[i]["files"].length; j++) {
                         downloadEmbed.addField(" " + data[i]["files"][j]["file"] + ": ", data[i]["files"][j]["url"]);
@@ -48,14 +50,17 @@ module.exports = {
 
 
 
+
                 downloadEmbed.setTimestamp();
                 downloadEmbed.setFooter("Die Erreichbarkeit der Website wird nicht gewährleistet.");
+
 
                 console.log(downloadEmbed);
 
 
                 //message.channel.send(JSON.stringify(data, null, 2));
                 resolve(downloadEmbed);
+
             });
         })
 
