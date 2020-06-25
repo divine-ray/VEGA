@@ -13,10 +13,10 @@ module.exports = {
             .setColor('#0099ff')
             .setTitle('Download List')
             .setURL('http://xj4kuswsas2jjggi.myfritz.net:8080/downloadtext')
-            .setAuthor('Ludima',// 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org'//
+            .setAuthor('Ludima',// '', ''//
             )
-            .setDescription('All available Files of our downloads server')
-            .setThumbnail('https://i.imgur.com/wSTFkRM.png')
+            .setDescription('All available Files of our downloads se')
+            .setThumbnail('')
             .addFields(
                 { name: 'Regular field title', value: 'Some value here' },
                 { name: '\u200B', value: '\u200B' },
@@ -24,9 +24,9 @@ module.exports = {
                 { name: 'Inline field title', value: 'Some value here', inline: true },
             )
             .addField('Inline field title', 'Some value here', true)
-            .setImage('https://i.imgur.com/wSTFkRM.png')
+            .setImage('')
             .setTimestamp()
-            .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+            .setFooter('Some footer text here', '');
 
         message.reply(exampleEmbed);
 
