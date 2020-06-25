@@ -27,14 +27,14 @@ module.exports = {
                 downloadEmbed.setURL("http://xj4kuswsas2jjggi.myfritz.net:8080/download/");
                 downloadEmbed.setDescription("Eine Liste aller dämonischen Dateien.");
 
-                /*
-                for (let i = 0; i < data.length-1; i++) {
+
+                for (let i = 0; i < data.length - 1; i++) {
                     downloadEmbed.addField("Benutzer: ", data[i]["name"]);
-                    for (let j = 0; j < data[i]["files"].length-1; j++) {
-                        downloadEmbed.addField(" "+data[i]["files"][j]["file"]+": ", data[i]["files"][j]["url"]);
+                    for (let j = 0; j < data[i]["files"].length - 1; j++) {
+                        downloadEmbed.addField(" " + data[i]["files"][j]["file"] + ": ", data[i]["files"][j]["url"]);
                     }
                 }
-                */
+
 
 
                 downloadEmbed.setTimestamp();
@@ -43,9 +43,7 @@ module.exports = {
                 // console.log(data[0].name);
 
                 //message.channel.send(JSON.stringify(data, null, 2));
-
-                let DownloadsArray = [(JSON.stringify(data, null, 2))]
-                message.channel.send(DownloadsArray)
+                message.channel.send(downloadEmbed)
 
 
 
