@@ -8,14 +8,15 @@ module.exports = {
     description: '...!',
     execute(message, args) {
 
-        console.log('Issued BeepBoop Command')
+        console.log('Issued Embed Command')
         const exampleEmbed = new Discord.MessageEmbed()
             .setColor('#0099ff')
-            .setTitle('Some title')
-            .setURL('https://discord.js.org/')
-            .setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
-            .setDescription('Some description here')
-            .setThumbnail('https://i.imgur.com/wSTFkRM.png')
+            .setTitle('Download List')
+            .setURL('http://xj4kuswsas2jjggi.myfritz.net:8080/downloadtext')
+            .setAuthor('Ludima',// '', ''//
+            )
+            .setDescription('All available Files of our downloads site')
+            .setThumbnail('')
             .addFields(
                 { name: 'Regular field title', value: 'Some value here' },
                 { name: '\u200B', value: '\u200B' },
@@ -23,11 +24,11 @@ module.exports = {
                 { name: 'Inline field title', value: 'Some value here', inline: true },
             )
             .addField('Inline field title', 'Some value here', true)
-            .setImage('https://i.imgur.com/wSTFkRM.png')
+            .setImage('')
             .setTimestamp()
-            .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+            .setFooter('Some footer text here', '');
 
-        channel.send(exampleEmbed);
+        message.reply(exampleEmbed);
 
     }
 
