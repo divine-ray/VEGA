@@ -43,7 +43,7 @@ module.exports = {
                 // console.log(data[0].name);
 
                 //message.channel.send(JSON.stringify(data, null, 2));
-                message.channel.send(downloadEmbed)
+                message.channel.send(downloadEmbed || "none");
 
 
 
