@@ -47,7 +47,7 @@ module.exports = {
                     downloadEmbed.addField("Benutzer: ", data[i]["name"]);
                     for (let j = 0; j < data[i]["files"].length; j++) {
 
-                        downloadEmbed.addField(" " + data[i]["files"][j]["file"] + " ("+data[i]["files"][j]["size"]+"): ", data[i]["files"][j]["url"]);
+                        downloadEmbed.addField(" " + data[i]["files"][j]["file"] + " (" + data[i]["files"][j]["size"] + "): ", data[i]["files"][j]["url"]);
                     }
                 }
 
