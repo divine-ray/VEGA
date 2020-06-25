@@ -15,7 +15,9 @@ module.exports = {
             .setURL('http://xj4kuswsas2jjggi.myfritz.net:8080/downloadtext')
             .setAuthor('Ludima',// '', ''//
             )
-            .setDescription('All available Files of our downloads se')
+
+            .setDescription('All available Files of our downloads site')
+
             .setThumbnail('')
             .addFields(
                 { name: 'Regular field title', value: 'Some value here' },
