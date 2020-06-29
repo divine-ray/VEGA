@@ -1,3 +1,6 @@
+
+const {isInitalized} = require('./setup.js')
+
 module.exports = {
     name: 'general-assembly',
     cooldown: 5,
@@ -5,19 +8,18 @@ module.exports = {
     aliases: ['ga', 'vollversammlung', 'vs'],
     description: 'Forces everyone into a voice channel.',
     execute(message) {
-        //console.log(initalized)
 
-        if (initalized === true) {
+        if (isInitalized() === true) {
             console.log('yup');
-
+            message.member.roles.add(727090802341445632n)
 
         }
         else {
-            console.log(nope);
+            console.log('nope');
 
         }
 
-        
+
 
 
 
