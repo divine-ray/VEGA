@@ -4,7 +4,23 @@ module.exports = {
     guildOnly: true,
     aliases: ['ga', 'vollversammlung', 'vs'],
     description: 'Forces everyone into a voice channel.',
-    execute(message) { 
-        console.log(initalized)
+    execute(message) {
+        //console.log(initalized)
+
+        if (initalized === true) {
+            console.log('yup');
+
+
+        }
+        else {
+            console.log(nope);
+
+        }
+
+        
+
+
+
+
     }
 }
