@@ -43,6 +43,7 @@ client.on('message', message => {
 
     if (!command) {
         console.log('An unknown command has been issued')
+        message.reply('that command isnt defined.')
         return;
     }
 

@@ -35,7 +35,7 @@ module.exports = {
 
 
                 const downloadEmbed = new Discord.MessageEmbed();
-                downloadEmbed.setColor("#6e3684");
+                downloadEmbed.setColor('RANDOM');
                 downloadEmbed.setTitle("Downloadpage");
                 downloadEmbed.setURL("http://xj4kuswsas2jjggi.myfritz.net:8080/download/");
                 downloadEmbed.setDescription("Eine Liste aller dämonischen Dateien.");
@@ -50,22 +50,22 @@ module.exports = {
                         downloadEmbed.addField(" " + data[i]["files"][j]["file"] + " (" + data[i]["files"][j]["size"] + "): ", data[i]["files"][j]["url"]);
                     }
                 }
-              
-                downloadEmbed.setTimestamp();
-                downloadEmbed.setFooter("Die Erreichbarkeit der Website wird nicht gewährleistet.");
-
-
-                console.log(downloadEmbed);
-
-                //message.channel.send(JSON.stringify(data, null, 2));
-                //message.channel.send(downloadEmbed.toJSON(); || 'none');
-        
 
                 downloadEmbed.setTimestamp();
                 downloadEmbed.setFooter("Die Erreichbarkeit der Website wird nicht gewährleistet.");
 
 
-                console.log(downloadEmbed);
+                // console.log(downloadEmbed);
+
+                //message.channel.send(JSON.stringify(data, null, 2));
+                //message.channel.send(downloadEmbed.toJSON(); || 'none');
+
+
+                downloadEmbed.setTimestamp();
+                downloadEmbed.setFooter("Die Erreichbarkeit der Website wird nicht gewährleistet.");
+
+
+                //console.log(downloadEmbed);
 
                 //message.channel.send(JSON.stringify(data, null, 2));
                 //message.channel.send(downloadEmbed.toJSON(); || 'none');
@@ -76,7 +76,7 @@ module.exports = {
 
 
 
-                console.log(downloadEmbed);
+                //console.log(downloadEmbed);
 
 
                 //message.channel.send(JSON.stringify(data, null, 2));
