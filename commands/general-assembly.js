@@ -1,5 +1,5 @@
 
-const {isInitalized} = require('./setup.js')
+const { isInitalized } = require('./setup.js')
 
 module.exports = {
     name: 'general-assembly',
@@ -11,12 +11,13 @@ module.exports = {
 
         if (isInitalized() === true) {
             console.log('yup');
-            message.member.roles.add(727090802341445632n)
+            message.reply('Initializing a General Assembly..')
+            //message.member.roles.add()
 
         }
         else {
             console.log('nope');
-
+            message.reply('You need to run the setup command first!')
         }
 
 
