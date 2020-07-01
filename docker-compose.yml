@@ -1,0 +1,16 @@
+version: '3.2'
+services:
+  daemon:
+    image: "node:lts-alpine"
+    command: "node ."
+    working_dir: /demonicbot
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./:/demonicbot
+    links:
+      - redis
+  redis:
+    image: "redis:alpine"
+    volumes:
+      - "$PWD/redis-data:/var/lib/redis"
