@@ -32,7 +32,7 @@ client.on('message', message => {
 
     suggestions(message)
 
-    if (!message.content.startsWith(prefix)) return;
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
