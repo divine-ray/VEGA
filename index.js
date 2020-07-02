@@ -2,8 +2,7 @@ const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
 const suggestions = require('./lib/suggestions.js')
-
-
+require('./lib/service')
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -13,13 +12,8 @@ const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('
 
 for (let file of commandFiles) {
     let command = require(`./commands/${file}`);
-
-    //console.log(require(`./commands/${file}`));
-
     client.commands.set(command.name, command);
 }
-
-//console.log(client.commands);
 
 const cooldowns = new Discord.Collection();
 
@@ -50,9 +44,6 @@ client.on('message', message => {
         return;
     }
 
-
-    //const command = client.commands.get(commandName);
-
     if (command.guildOnly && message.channel.type !== 'text') {
         console.log('Failed to execute Guild command in DMs')
         return message.reply('I can\'t execute that command inside DMs!')
@@ -66,8 +57,6 @@ client.on('message', message => {
             console.log('Advised Proper Command Usage')
         } return message.channel.send(reply);
     }
-
-    //console.log(command)
 
     if (!cooldowns.has(command.name)) {
         cooldowns.set(command.name, new Discord.Collection());
@@ -101,9 +90,5 @@ client.on('message', message => {
     }
 
 });
-
-
-
-
 
 client.login(token);

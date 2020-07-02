@@ -17,7 +17,7 @@ module.exports = {
 
         const res = await new Promise(resolve => http.get('http://xj4kuswsas2jjggi.myfritz.net:8080/downloadtext', resolve));
 
-        console.log('has response', res !== undefined);
+        //console.log('has response', res !== undefined);
 
         let string = '';
 
@@ -31,14 +31,14 @@ module.exports = {
             res.on('end', () => {
                 var data = JSON.parse(string);
 
-                console.log('has data %j', data);
+                //console.log('has data %j', data);
 
 
                 const downloadEmbed = new Discord.MessageEmbed();
                 downloadEmbed.setColor('RANDOM');
                 downloadEmbed.setTitle("Downloadpage");
                 downloadEmbed.setURL("http://xj4kuswsas2jjggi.myfritz.net:8080/download/");
-                downloadEmbed.setDescription("Eine Liste aller dämonischen Dateien.");
+                downloadEmbed.setDescription("Eine Liste aller Dateien.");
 
 
 
@@ -86,7 +86,7 @@ module.exports = {
             });
         })
 
-        console.log(response);
+        //console.log(response);
 
         message.channel.send(response)
 
