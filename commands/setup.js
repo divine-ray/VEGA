@@ -1,10 +1,9 @@
 const Discord = require("discord.js");
 
+var initalized = false //this is needed for general assembly and setup
 
-var initalized = false
 module.exports = {
     name: 'setup',
-    cooldown: 500,
     guildOnly: true,
     aliases: ['init'],
     isInitalized() { return initalized },
@@ -12,28 +11,51 @@ module.exports = {
     description: 'Creates the required roles for a couple features of this bot.',
     execute(message, args) {
 
-        message.channel.send('Setting up Roles..');
-        console.log('Setting up Roles..')
-        message.guild.roles.create({
-            data: {
-                name: 'Vacant (General Assemby)',
-                hexColor: '#e6083b',
-            },
-            reason: 'Needed for the General Assembly',
-        })
+        //console.log(message.guild.roles.find.cache("Present (General Assemby)"))
+        // message.reply(message.guild.roles.cache.find(role => role.name === 'Present (General Assemby'))
 
-        message.guild.roles.create({
-            data: {
-                name: 'Present (General Assemby)',
-                hexColor: '#549c2d',
-            },
-            reason: 'Needed for the General Assembly',
-        })
-        //More roles n' stuff will be here
-        console.log('Created all Neccesary roles for this guild');
+        //console.log(message.guild.roles.cache.find(role => role.name === 'Vacant (General Assemby)'))
+
+
+
+
+        const role1 = message.guild.roles.cache.find(role => role.name === 'Vacant (General Assemby)')
+        const role2 = message.guild.roles.cache.find(role => role.name === 'Present (General Assemby)')
+
+        if (!role1 || !role2) {
+            message.channel.send('Setting up Roles..');
+
+        } else {
+            message.channel.send('Required roles have been found, skipping creation')
+        }
+
+        if (!role1) {
+            message.guild.roles.create({
+                data: {
+                    name: 'Vacant (General Assemby)',
+                    color: [169, 49, 32],
+                    mentionable: true,
+                },
+                reason: 'Needed for the General Assembly',
+            })
+            message.channel.send('Created Role Vacant (General Assemby)');
+        }
+
+        if (!role2) {
+            message.guild.roles.create({
+                data: {
+                    name: 'Present (General Assemby)',
+                    color: [47, 99, 48],
+                    mentionable: true,
+                },
+                reason: 'Needed for the General Assembly',
+            })
+            message.channel.send('Created Role Present (General Assemby)')
+
+
+        }
+
         initalized = true
-        message.channel.send('all roles are good to go now.')
-        console.log(initalized)
-    }
 
+    }
 }
