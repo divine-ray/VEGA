@@ -21,8 +21,10 @@ module.exports = {
 
         const role1 = message.guild.roles.cache.find(role => role.name === 'Vacant (General Assemby)')
         const role2 = message.guild.roles.cache.find(role => role.name === 'Present (General Assemby)')
+        const role3 = message.guild.roles.cache.find(role => role.name === 'Opt-Out (General Assemby)')
 
-        if (!role1 || !role2) {
+        if (!role1 || !role2 || !role3) {
+
             message.channel.send('Setting up Roles..');
 
         } else {
@@ -49,12 +51,21 @@ module.exports = {
                     mentionable: true,
                 },
                 reason: 'Needed for the General Assembly',
-            })
+            })     
             message.channel.send('Created Role Present (General Assemby)')
-
-
         }
-
+            if (!role3) {
+                message.guild.roles.create({
+                    data: {
+                        name: 'Opt-Out (General Assemby)',
+                        color: [255, 200, 0],
+                        mentionable: true,
+                    },
+                    reason: 'Needed for the General Assembly',
+                })
+                message.channel.send('Created Role Opt-Out (General Assemby)');
+            }
+    
         initalized = true
 
     }
