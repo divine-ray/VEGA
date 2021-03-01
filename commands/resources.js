@@ -4,6 +4,6 @@ module.exports = {
     description: 'Prints all related Links and Data.',
     execute(message, args) {
         message.channel.send('Trello board https://trello.com/b/ZwgV8nIn/demon-bot, Github https://github.com/CreepTV/DemonBot');
-        console.log('Issued PingPong Command')
+        console.log('Issued Resources Info Command')
     }
 }

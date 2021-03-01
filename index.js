@@ -27,13 +27,27 @@ const cooldowns = new Discord.Collection();
 
 client.once('ready', () => {
     console.log('Ready for service');
+    console.log(`Logged in as ${client.user.tag}!`);
+
+    client.user.setPresence({
+        status: "dnd",  // You can show online, idle... Do not disturb is dnd
+        activity: {
+            name: "Vega, help",  // The message shown
+            type: "playing" // PLAYING, WATCHING, LISTENING, STREAMING,
+        }
+    });
 });
 
 client.on('message', message => {
 
     suggestions(message)
-
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
+    if (message.content == 'sues' //&& guild.id('813472749603258368')
+    ){                                  //472734482206687243 schrekl
+        message.channel.send('no u')
+    }
+    if (!message.content.startsWith(prefix)){
+        return
+    }
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
@@ -51,7 +65,6 @@ client.on('message', message => {
         return;
     }
     
-    //const PresenceStatus = dnd;
 
     //const command = client.commands.get(commandName);
 
@@ -103,10 +116,6 @@ client.on('message', message => {
     }
 
 });
-
-if(Discord.MessageMentions) [
-
-]
 
 
 
