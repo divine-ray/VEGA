@@ -28,7 +28,7 @@ module.exports = {
             message.channel.send('there was an error trying to clear messages in this channel!');
         });
 
-        console.log('issued clearmsg command')
+        console.log('issued clearmsg (censorship) command')
 
     }
 }

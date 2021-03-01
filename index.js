@@ -19,13 +19,14 @@ for (let file of commandFiles) {
     client.commands.set(command.name, command);
 }
 
+
 //console.log(client.commands);
 
 const cooldowns = new Discord.Collection();
 
 
 client.once('ready', () => {
-    console.log('Up and Running!');
+    console.log('Ready for service');
 });
 
 client.on('message', message => {
@@ -46,10 +47,11 @@ client.on('message', message => {
 
     if (!command) {
         console.log('An unknown command has been issued')
-        message.reply('that command isnt defined.')
+        message.reply('that command is not defined.')
         return;
     }
-
+    
+    //const PresenceStatus = dnd;
 
     //const command = client.commands.get(commandName);
 
@@ -102,7 +104,9 @@ client.on('message', message => {
 
 });
 
+if(Discord.MessageMentions) [
 
+]
 
 
 
