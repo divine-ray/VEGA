@@ -3,11 +3,11 @@ const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
 const suggestions = require('./lib/suggestions.js')
 
+const { Client } = require('discord.js');
+const client = new Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 
-
-const client = new Discord.Client();
+//const client = new Discord.Client();
 client.commands = new Discord.Collection();
-
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
@@ -19,14 +19,12 @@ for (let file of commandFiles) {
     client.commands.set(command.name, command);
 }
 
-
 //console.log(client.commands);
 
 const cooldowns = new Discord.Collection();
 
-
 client.once('ready', () => {
-    console.log('Ready for service');
+    console.log('All Systems are good to go.');
     console.log(`Logged in as ${client.user.tag}!`);
 
     client.user.setPresence({
@@ -41,11 +39,12 @@ client.once('ready', () => {
 client.on('message', message => {
 
     suggestions(message)
+
     if (message.content == 'sues' //&& guild.id('813472749603258368')
-    ){                                  //472734482206687243 schrekl
+    ) {                                  //472734482206687243 schrekl
         message.channel.send('no u')
     }
-    if (!message.content.startsWith(prefix)){
+    if (!message.content.startsWith(prefix)) {
         return
     }
 
@@ -64,7 +63,6 @@ client.on('message', message => {
         message.reply('that command is not defined.')
         return;
     }
-    
 
     //const command = client.commands.get(commandName);
 
