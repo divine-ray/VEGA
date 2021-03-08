@@ -1,21 +1,28 @@
-module.exports.run = async (client, message, args) => {
+// module.exports.run = async (client, message, args) => {
 
-    let userId = args.replace(args.substring(args.indexOf(' ')), '');
-    let tMessage = args.substring(args.indexOf(' ') + 1);
+//     let userId = args.replace(args.substring(args.indexOf(' ')), '');
+//     let tMessage = args.substring(args.indexOf(' ') + 1);
 
-    //d?settunnel userId tMessage
-    if (!client.users.cache.get(userId)) {
-        message.channel.send('User not found.');
-    } else {
-        try {
-            let tunnelEnd = await client.users.cache.get(userId);
+//     // d?settunnel userId tMessage
+//     if (!client.users.cache.get(userId)) {
+//         message.channel.send('User not found.');
+//     } else {
+//         try {
+//             let tunnelEnd = await client.users.cache.get(userId);
 
-            tunnelEnd.send(tMessage);
-            message.channel.send('Message sent.');
-        } catch (error) {
-            message.channel.send('Something went wrong...');
-            console.error('Something went wrong...');
-        }
-    }
+//             tunnelEnd.send(tMessage);
+//             message.channel.send('Message sent.');
+//         } catch (error) {
+//             message.channel.send('Something went wrong...');
+//             console.error('Something went wrong...');
+//         }
+//     }
 
+// }
+
+module.exports = {
+    name: 'tunnel',
+    cooldown: 5,
+    aliases: ['t'],
+    description: 'DMs a User anonymously'
 }
