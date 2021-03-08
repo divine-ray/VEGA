@@ -60,7 +60,7 @@ client.on('message', message => {
 
     if (!command) {
         console.log('An unknown command has been issued')
-        message.reply('that command is not defined.')
+        message.reply('Could not find that command.')
         return;
     }
 
@@ -68,14 +68,14 @@ client.on('message', message => {
 
     if (command.guildOnly && message.channel.type !== 'text') {
         console.log('Failed to execute Guild command in DMs')
-        return message.reply('I can\'t execute that command inside DMs!')
+        return message.reply(`Unable to execute ${command.name} in DMs`)
     }
 
     if (command.args && !args.length) {
 
-        let reply = `You didn't provide any arguments, ${message.author}!`;
+        let reply = `You have not supplied enough arguments, ${message.author}!`;
         if (command.usage) {
-            reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
+            reply += `\nUse the command like this: \`${prefix}${command.name} ${command.usage}\``;
             console.log('Advised Proper Command Usage')
         } return message.channel.send(reply);
     }
@@ -110,7 +110,7 @@ client.on('message', message => {
         command.execute(message, args);
     } catch (error) {
         console.error(error);
-        message.reply('there was an error trying to execute that command!');
+        message.reply('There was a fatal error trying to execute that command.');
     }
 
 });
