@@ -38,7 +38,7 @@ module.exports = {
             message.channel.send('User not found.');
         } else {
             try {
-                let tunnelEnd = await client.users.cache.get(userId);
+                let tunnelEnd = client.users.cache.get(userId);
 
                 tunnelEnd.send(tMessage);
                 message.channel.send('Message sent.');

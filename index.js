@@ -11,6 +11,7 @@ client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
+//console.log(fs.readdirSync('./commands').filter(file => file.endsWith('.js')))
 for (let file of commandFiles) {
     let command = require(`./commands/${file}`);
 
@@ -48,8 +49,8 @@ client.on('message', message => {
         return
     }
 
-    if (!message.content.startsWith(PREFIX)) return;
-    let cmdName = message.content.substring(message.content.indexOf(PREFIX) + 2).split(new RegExp(/\s+/)).shift();
+    if (!message.content.startsWith(prefix)) return;
+    let cmdName = message.content.substring(message.content.indexOf(prefix) + 2).split(new RegExp(/\s+/)).shift();
     let argsToParse = message.content.substring(message.content.indexOf(' ') + 1);
 
     module.exports.argsToParse = argsToParse;
