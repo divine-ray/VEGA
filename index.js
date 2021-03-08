@@ -48,6 +48,12 @@ client.on('message', message => {
         return
     }
 
+    if (!message.content.startsWith(PREFIX)) return;
+    let cmdName = message.content.substring(message.content.indexOf(PREFIX) + 2).split(new RegExp(/\s+/)).shift();
+    let argsToParse = message.content.substring(message.content.indexOf(' ') + 1);
+
+    module.exports.argsToParse = argsToParse;
+
     const args = message.content.slice(prefix.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
 
