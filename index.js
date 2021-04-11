@@ -11,7 +11,7 @@ client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-//console.log(fs.readdirSync('./commands').filter(file => file.endsWith('.js')))
+
 for (let file of commandFiles) {
     let command = require(`./commands/${file}`);
 
@@ -32,7 +32,7 @@ client.once('ready', () => {
         status: "dnd",  // You can show online, idle... Do not disturb is dnd
         activity: {
             name: "Vega, help",  // The message shown
-            type: "playing" // PLAYING, WATCHING, LISTENING, STREAMING,
+            type: "LISTENING" // PLAYING, WATCHING, LISTENING, STREAMING,
         }
     });
 });
@@ -56,6 +56,7 @@ client.on('message', message => {
     module.exports.argsToParse = argsToParse;
 
     const args = message.content.slice(prefix.length).split(/ +/);
+    console.log(args)
     const commandName = args.shift().toLowerCase();
 
     console.log('commandName', commandName)

@@ -21,7 +21,6 @@
 // }
 
 const discord = require('discord.js');
-const client = new discord.Client();
 const argsToParse = require('../index.js');
 
 module.exports = {
@@ -29,17 +28,17 @@ module.exports = {
     cooldown: 5,
     aliases: ['t'],
     description: 'DMs a User anonymously',
-    execute(message) {
+    async execute(message) {
         const args = argsToParse.argsToParse;
         let userId = args.replace(args.substring(args.indexOf(' ')), '');
         let tMessage = args.substring(args.indexOf(' ') + 1);
+        
+        let tunnelEnd = await message.client.users.fetch(userId);
 
-        if (!client.users.cache.get(userId)) {
+        if (!tunnelEnd) {
             message.channel.send('User not found.');
         } else {
             try {
-                let tunnelEnd = client.users.cache.get(userId);
-
                 tunnelEnd.send(tMessage);
                 message.channel.send('Message sent.');
             } catch (error) {
